@@ -45,21 +45,15 @@ const IndexPage = () => {
     inclusao: "",
     razao_social: "",
     cpf_cnpj: "",
+    //titular---------------
     tit_nome: "",
     tit_dn: "",
     tit_sexo: "",
     tit_estcivil: "",
     tit_nomemae: "",
-    tit_nacionalidade: "Brasileiro",
+    tit_nacionalidade: "BRASILEIRO",
     tit_ufnatural: "",
     tit_cidadenatural: "",
-    tit_cep: "",
-    tit_cidade: "",
-    tit_uf: "",
-    tit_logradouro: "",
-    tit_numero: "",
-    tit_complemento: "",
-    tit_bairro: "",
     tit_celular: "",
     tit_email: "",
     tit_cpf: "",
@@ -68,6 +62,54 @@ const IndexPage = () => {
     tit_dt_emissao: "",
     tit_dnv: "",
     tit_cns: "",
+    //Dependente 1 ------------------------
+    dep1_nome: "",
+    dep1_dn: "",
+    dep1_sexo: "",
+    dep1_estcivil: "",
+    dep1_nomemae: "",
+    dep1_celular: "",
+    dep1_cpf: "",
+    dep1_rg: "",
+    dep1_orgao_exp: "",
+    dep1_cns: "",
+    dep1_parentesco: "",
+    //Dependente 2 ------------------------
+    dep2_nome: "",
+    dep2_dn: "",
+    dep2_sexo: "",
+    dep2_estcivil: "",
+    dep2_nomemae: "",
+    dep2_celular: "",
+    dep2_cpf: "",
+    dep2_rg: "",
+    dep2_orgao_exp: "",
+    dep2_cns: "",
+    dep2_parentesco: "",
+    //Dependente 3 ------------------------
+    dep3_nome: "",
+    dep3_dn: "",
+    dep3_sexo: "",
+    dep3_estcivil: "",
+    dep3_nomemae: "",
+    dep3_celular: "",
+    dep3_cpf: "",
+    dep3_rg: "",
+    dep3_orgao_exp: "",
+    dep3_cns: "",
+    dep3_parentesco: "",
+    //Dependente 4 ------------------------
+    dep4_nome: "",
+    dep4_dn: "",
+    dep4_sexo: "",
+    dep4_estcivil: "",
+    dep4_nomemae: "",
+    dep4_celular: "",
+    dep4_cpf: "",
+    dep4_rg: "",
+    dep4_orgao_exp: "",
+    dep4_cns: "",
+    dep4_parentesco: "",
   });
 
   const [cep, setCep] = useState("");
@@ -154,6 +196,8 @@ const IndexPage = () => {
     };
 
     const fieldValues = [
+
+      //--------------------TITULAR---------------------------
       { fieldName: "razao_social", value: formValues.razao_social },
       { fieldName: "cpf_cnpj", value: formValues.cpf_cnpj },
       { fieldName: "tit_nome", value: formValues.tit_nome },
@@ -185,6 +229,55 @@ const IndexPage = () => {
       },
       { fieldName: "tit_dnv", value: formValues.tit_dnv },
       { fieldName: "tit_cns", value: formValues.tit_cns },
+      //--------------------DEP1---------------------------
+      { fieldName: "dep1_nome",       value: formValues.dep1_nome },
+      { fieldName: "dep1_dn",         value: formValues.dep1_dn },
+      { fieldName: "dep1_sexo",       value: formValues.dep1_sexo === "M" ? "M" : "F"  },
+      { fieldName: "dep1_estcivil",   value: formValues.dep1_estcivil },
+      { fieldName: "dep1_nomemae",    value: formValues.dep1_nomemae },
+      { fieldName: "dep1_celular",    value: formValues.dep1_celular },
+      { fieldName: "dep1_parentesco", value: formValues.dep2_parentesco },
+      { fieldName: "dep1_cpf",        value: formValues.dep1_cpf },
+      { fieldName: "dep1_rg",         value: formValues.dep1_rg },
+      { fieldName: "dep1_orgao_exp",  value: formValues.dep1_orgao_exp },
+      { fieldName: "dep1_cns",        value: formValues.dep1_cns },
+      
+      //--------------------DEP2---------------------------
+      { fieldName: "dep2_nome",       value: formValues.dep2_nome },
+      { fieldName: "dep2_dn",         value: formValues.dep2_dn },
+      { fieldName: "dep2_sexo",       value: formValues.dep2_sexo === "M" ? "M" : "F"  },
+      { fieldName: "dep2_estcivil",   value: formValues.dep2_estcivil },
+      { fieldName: "dep2_nomemae",    value: formValues.dep2_nomemae },
+      { fieldName: "dep2_celular",    value: formValues.dep2_celular },
+      { fieldName: "dep2_parentesco", value: formValues.dep2_parentesco },
+      { fieldName: "dep2_cpf",        value: formValues.dep2_cpf },
+      { fieldName: "dep2_rg",         value: formValues.dep2_rg },
+      { fieldName: "dep2_orgao_exp",  value: formValues.dep2_orgao_exp },
+      { fieldName: "dep2_cns",        value: formValues.dep2_cns },
+      //--------------------DEP3---------------------------
+      { fieldName: "dep3_nome",       value: formValues.dep3_nome },
+      { fieldName: "dep3_dn",         value: formValues.dep3_dn },
+      { fieldName: "dep3_sexo",       value: formValues.dep3_sexo === "M" ? "M" : "F"  },
+      { fieldName: "dep3_estcivil",   value: formValues.dep3_estcivil },
+      { fieldName: "dep3_nomemae",    value: formValues.dep3_nomemae },
+      { fieldName: "dep3_celular",    value: formValues.dep3_celular },
+      { fieldName: "dep3_parentesco", value: formValues.dep3_parentesco },
+      { fieldName: "dep3_cpf",        value: formValues.dep3_cpf },
+      { fieldName: "dep3_rg",         value: formValues.dep3_rg },
+      { fieldName: "dep3_orgao_exp",  value: formValues.dep3_orgao_exp },
+      { fieldName: "dep3_cns",        value: formValues.dep3_cns },
+      //--------------------DEP4---------------------------
+      { fieldName: "dep4_nome",       value: formValues.dep4_nome },
+      { fieldName: "dep4_dn",         value: formValues.dep4_dn },
+      { fieldName: "dep4_sexo",       value: formValues.dep4_sexo === "M" ? "M" : "F"  },
+      { fieldName: "dep4_estcivil",   value: formValues.dep4_estcivil },
+      { fieldName: "dep4_nomemae",    value: formValues.dep4_nomemae },
+      { fieldName: "dep4_celular",    value: formValues.dep4_celular },
+      { fieldName: "dep4_parentesco", value: formValues.dep4_parentesco },
+      { fieldName: "dep4_cpf",        value: formValues.dep4_cpf },
+      { fieldName: "dep4_rg",         value: formValues.dep4_rg },
+      { fieldName: "dep4_orgao_exp",  value: formValues.dep4_orgao_exp },
+      { fieldName: "dep4_cns",        value: formValues.dep4_cns },
     ];
 
     // Preenche os campos do formulário
@@ -811,6 +904,582 @@ const IndexPage = () => {
                     </Flex>
                   </TabPanel>
                 </motion.div>
+              </AnimatePresence>
+              <AnimatePresence initial={false} mode="wait">
+                <motion.div
+                  key={currentStep}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <TabPanel>
+                    <FormLabel>Nome</FormLabel>
+                    <Input
+                      variant="filled"
+                      name="dep1_nome"
+                      value={formValues.dep1_nome}
+                      onChange={handleInputChange}
+                    />
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Data de Nascimento</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep1_dn"
+                          value={formValues.dep1_dn}
+                          onChange={handleInputChange}
+                          type="date"
+                        />
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>Sexo</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep1_sexo"
+                          value={formValues.dep1_sexo}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="M">Masculino</option>
+                          <option value="F">Feminino</option>
+                        </Select>
+                      </FormControl>
+                    </Flex>
+
+                    <FormLabel>Nome da Mãe</FormLabel>
+                    <Input
+                      variant="filled"
+                      name="dep1_nomemae"
+                      value={formValues.dep1_nomemae}
+                      onChange={handleInputChange}
+                    />
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>CPF</FormLabel>
+                        <InputMask
+                          mask="999.999.999-99"
+                          variant="filled"
+                          name="dep1_cpf"
+                          value={formValues.dep1_cpf}
+                          onChange={handleInputChange}
+                        >
+                          {(inputProps) => <Input {...inputProps} />}
+                        </InputMask>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>RG</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep1_rg"
+                          value={formValues.dep1_rg}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                      <FormControl w={'50vh'}>
+                        <FormLabel>Órgão Emissor</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep1_orgao_exp"
+                          value={formValues.dep1_orgao_exp}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                    </Flex>
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Estado Civil</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep1_estcivil"
+                          value={formValues.dep1_estcivil}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="1">Solteiro</option>
+                          <option value="2">Casado</option>
+                          <option value="3">Companheiro</option>
+                          <option value="4">Separado / Divorciado</option>
+                          <option value="5">Viúvo</option>
+                        </Select>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>Grau de Parentesco</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep1_parentesco"
+                          value={formValues.dep1_parentesco}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="1">Cônjuge</option>
+                          <option value="2">Companheiro</option>
+                          <option value="3">Filhos</option>
+                          <option value="4">Filho agregado (maior)</option>
+                        </Select>
+                      </FormControl>
+                    </Flex>
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Celular</FormLabel>
+                        <InputMask
+                          mask="(99) 99999-9999"
+                          variant="filled"
+                          name="dep1_celular"
+                          value={formValues.dep1_celular}
+                          onChange={handleInputChange}
+                        >
+                          {(inputProps) => <Input {...inputProps} />}
+                        </InputMask>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>CNS</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep1_cns"
+                          value={formValues.dep1_cns}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                    </Flex>
+                  </TabPanel>
+                  </motion.div>
+              </AnimatePresence>
+              <AnimatePresence initial={false} mode="wait">
+                <motion.div
+                  key={currentStep}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <TabPanel>
+                    <FormLabel>Nome</FormLabel>
+                    <Input
+                      variant="filled"
+                      name="dep2_nome"
+                      value={formValues.dep2_nome}
+                      onChange={handleInputChange}
+                    />
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Data de Nascimento</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep2_dn"
+                          value={formValues.dep2_dn}
+                          onChange={handleInputChange}
+                          type="date"
+                        />
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>Sexo</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep2_sexo"
+                          value={formValues.dep2_sexo}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="M">Masculino</option>
+                          <option value="F">Feminino</option>
+                        </Select>
+                      </FormControl>
+                    </Flex>
+
+                    <FormLabel>Nome da Mãe</FormLabel>
+                    <Input
+                      variant="filled"
+                      name="dep2_nomemae"
+                      value={formValues.dep2_nomemae}
+                      onChange={handleInputChange}
+                    />
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>CPF</FormLabel>
+                        <InputMask
+                          mask="999.999.999-99"
+                          variant="filled"
+                          name="dep2_cpf"
+                          value={formValues.dep2_cpf}
+                          onChange={handleInputChange}
+                        >
+                          {(inputProps) => <Input {...inputProps} />}
+                        </InputMask>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>RG</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep2_rg"
+                          value={formValues.dep2_rg}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                      <FormControl w={'50vh'}>
+                        <FormLabel>Órgão Emissor</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep2_orgao_exp"
+                          value={formValues.dep2_orgao_exp}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                    </Flex>
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Estado Civil</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep2_estcivil"
+                          value={formValues.dep2_estcivil}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="1">Solteiro</option>
+                          <option value="2">Casado</option>
+                          <option value="3">Companheiro</option>
+                          <option value="4">Separado / Divorciado</option>
+                          <option value="5">Viúvo</option>
+                        </Select>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>Grau de Parentesco</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep2_parentesco"
+                          value={formValues.dep2_parentesco}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="1">Cônjuge</option>
+                          <option value="2">Companheiro</option>
+                          <option value="3">Filhos</option>
+                          <option value="4">Filho agregado (maior)</option>
+                        </Select>
+                      </FormControl>
+                    </Flex>
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Celular</FormLabel>
+                        <InputMask
+                          mask="(99) 99999-9999"
+                          variant="filled"
+                          name="dep2_celular"
+                          value={formValues.dep2_celular}
+                          onChange={handleInputChange}
+                        >
+                          {(inputProps) => <Input {...inputProps} />}
+                        </InputMask>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>CNS</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep2_cns"
+                          value={formValues.dep2_cns}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                    </Flex>
+                  </TabPanel>
+                  </motion.div>
+              </AnimatePresence>
+              <AnimatePresence initial={false} mode="wait">
+                <motion.div
+                  key={currentStep}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <TabPanel>
+                    <FormLabel>Nome</FormLabel>
+                    <Input
+                      variant="filled"
+                      name="dep3_nome"
+                      value={formValues.dep3_nome}
+                      onChange={handleInputChange}
+                    />
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Data de Nascimento</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep3_dn"
+                          value={formValues.dep3_dn}
+                          onChange={handleInputChange}
+                          type="date"
+                        />
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>Sexo</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep3_sexo"
+                          value={formValues.dep3_sexo}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="M">Masculino</option>
+                          <option value="F">Feminino</option>
+                        </Select>
+                      </FormControl>
+                    </Flex>
+
+                    <FormLabel>Nome da Mãe</FormLabel>
+                    <Input
+                      variant="filled"
+                      name="dep3_nomemae"
+                      value={formValues.dep3_nomemae}
+                      onChange={handleInputChange}
+                    />
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>CPF</FormLabel>
+                        <InputMask
+                          mask="999.999.999-99"
+                          variant="filled"
+                          name="dep3_cpf"
+                          value={formValues.dep3_cpf}
+                          onChange={handleInputChange}
+                        >
+                          {(inputProps) => <Input {...inputProps} />}
+                        </InputMask>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>RG</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep3_rg"
+                          value={formValues.dep3_rg}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                      <FormControl w={'50vh'}>
+                        <FormLabel>Órgão Emissor</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep3_orgao_exp"
+                          value={formValues.dep3_orgao_exp}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                    </Flex>
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Estado Civil</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep3_estcivil"
+                          value={formValues.dep3_estcivil}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="1">Solteiro</option>
+                          <option value="2">Casado</option>
+                          <option value="3">Companheiro</option>
+                          <option value="4">Separado / Divorciado</option>
+                          <option value="5">Viúvo</option>
+                        </Select>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>Grau de Parentesco</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep3_parentesco"
+                          value={formValues.dep3_parentesco}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="1">Cônjuge</option>
+                          <option value="2">Companheiro</option>
+                          <option value="3">Filhos</option>
+                          <option value="4">Filho agregado (maior)</option>
+                        </Select>
+                      </FormControl>
+                    </Flex>
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Celular</FormLabel>
+                        <InputMask
+                          mask="(99) 99999-9999"
+                          variant="filled"
+                          name="dep3_celular"
+                          value={formValues.dep3_celular}
+                          onChange={handleInputChange}
+                        >
+                          {(inputProps) => <Input {...inputProps} />}
+                        </InputMask>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>CNS</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep3_cns"
+                          value={formValues.dep3_cns}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                    </Flex>
+                  </TabPanel>
+                  </motion.div>
+              </AnimatePresence>
+              <AnimatePresence initial={false} mode="wait">
+                <motion.div
+                  key={currentStep}
+                  initial={{ opacity: 0, x: 100 }}
+                  animate={{ opacity: 1, x: 0 }}
+                  exit={{ opacity: 0, x: -100 }}
+                  transition={{ duration: 0.3 }}
+                >
+                  <TabPanel>
+                    <FormLabel>Nome</FormLabel>
+                    <Input
+                      variant="filled"
+                      name="dep4_nome"
+                      value={formValues.dep4_nome}
+                      onChange={handleInputChange}
+                    />
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Data de Nascimento</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep4_dn"
+                          value={formValues.dep4_dn}
+                          onChange={handleInputChange}
+                          type="date"
+                        />
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>Sexo</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep4_sexo"
+                          value={formValues.dep4_sexo}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="M">Masculino</option>
+                          <option value="F">Feminino</option>
+                        </Select>
+                      </FormControl>
+                    </Flex>
+
+                    <FormLabel>Nome da Mãe</FormLabel>
+                    <Input
+                      variant="filled"
+                      name="dep4_nomemae"
+                      value={formValues.dep4_nomemae}
+                      onChange={handleInputChange}
+                    />
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>CPF</FormLabel>
+                        <InputMask
+                          mask="999.999.999-99"
+                          variant="filled"
+                          name="dep4_cpf"
+                          value={formValues.dep4_cpf}
+                          onChange={handleInputChange}
+                        >
+                          {(inputProps) => <Input {...inputProps} />}
+                        </InputMask>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>RG</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep4_rg"
+                          value={formValues.dep4_rg}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                      <FormControl w={'50vh'}>
+                        <FormLabel>Órgão Emissor</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep4_orgao_exp"
+                          value={formValues.dep4_orgao_exp}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                    </Flex>
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Estado Civil</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep4_estcivil"
+                          value={formValues.dep4_estcivil}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="1">Solteiro</option>
+                          <option value="2">Casado</option>
+                          <option value="3">Companheiro</option>
+                          <option value="4">Separado / Divorciado</option>
+                          <option value="5">Viúvo</option>
+                        </Select>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>Grau de Parentesco</FormLabel>
+                        <Select
+                          variant="filled"
+                          placeholder="Selecione"
+                          name="dep4_parentesco"
+                          value={formValues.dep4_parentesco}
+                          onChange={handleSelectChange}
+                        >
+                          <option value="1">Cônjuge</option>
+                          <option value="2">Companheiro</option>
+                          <option value="3">Filhos</option>
+                          <option value="4">Filho agregado (maior)</option>
+                        </Select>
+                      </FormControl>
+                    </Flex>
+
+                    <Flex gap={6}>
+                      <FormControl>
+                        <FormLabel>Celular</FormLabel>
+                        <InputMask
+                          mask="(99) 99999-9999"
+                          variant="filled"
+                          name="dep4_celular"
+                          value={formValues.dep4_celular}
+                          onChange={handleInputChange}
+                        >
+                          {(inputProps) => <Input {...inputProps} />}
+                        </InputMask>
+                      </FormControl>
+                      <FormControl>
+                        <FormLabel>CNS</FormLabel>
+                        <Input
+                          variant="filled"
+                          name="dep4_cns"
+                          value={formValues.dep4_cns}
+                          onChange={handleInputChange}
+                        />
+                      </FormControl>
+                    </Flex>
+                  </TabPanel>
+                  </motion.div>
               </AnimatePresence>
             </TabPanels>
           </Tabs>
