@@ -83,7 +83,7 @@ const IndexPage = () => {
     dep2_celular: "",
     dep2_cpf: "",
     dep2_rg: "",
-    dep2_orgao_exp: "",
+    dep_orgao_exp: "",
     dep2_cns: "",
     dep2_parentesco: "",
     //Dependente 3 ------------------------
@@ -236,7 +236,7 @@ const IndexPage = () => {
       { fieldName: "dep1_estcivil",   value: formValues.dep1_estcivil },
       { fieldName: "dep1_nomemae",    value: formValues.dep1_nomemae },
       { fieldName: "dep1_celular",    value: formValues.dep1_celular },
-      { fieldName: "dep1_parentesco", value: formValues.dep2_parentesco },
+      { fieldName: "dep1_parentesco", value: formValues.dep1_parentesco },
       { fieldName: "dep1_cpf",        value: formValues.dep1_cpf },
       { fieldName: "dep1_rg",         value: formValues.dep1_rg },
       { fieldName: "dep1_orgao_exp",  value: formValues.dep1_orgao_exp },
@@ -252,7 +252,7 @@ const IndexPage = () => {
       { fieldName: "dep2_parentesco", value: formValues.dep2_parentesco },
       { fieldName: "dep2_cpf",        value: formValues.dep2_cpf },
       { fieldName: "dep2_rg",         value: formValues.dep2_rg },
-      { fieldName: "dep2_orgao_exp",  value: formValues.dep2_orgao_exp },
+      { fieldName: "dep_orgao_exp",  value: formValues.dep_orgao_exp },
       { fieldName: "dep2_cns",        value: formValues.dep2_cns },
       //--------------------DEP3---------------------------
       { fieldName: "dep3_nome",       value: formValues.dep3_nome },
@@ -341,6 +341,11 @@ const IndexPage = () => {
   const [nextStep, setNextStep] = useState(3);
 
   const handleSelectChange = (event) => {
+    const value = event.target.value;
+    setFormValues({ ...formValues, [event.target.name]: value });
+  };
+
+  const handleSelectChange1 = (event) => {
     const value = event.target.value;
     setFormValues({ ...formValues, [event.target.name]: value });
 
@@ -464,7 +469,7 @@ const IndexPage = () => {
                           placeholder="Selecione"
                           name="inclusao"
                           value={formValues.inclusao}
-                          onChange={handleSelectChange}
+                          onChange={handleSelectChange1}
                         >
                           <option value="tit">TITULAR</option>
                           <option value="tit_dep">TITULAR+DEPENDENTES</option>
@@ -1126,8 +1131,8 @@ const IndexPage = () => {
                         <FormLabel>Órgão Emissor</FormLabel>
                         <Input
                           variant="filled"
-                          name="dep2_orgao_exp"
-                          value={formValues.dep2_orgao_exp}
+                          name="dep_orgao_exp"
+                          value={formValues.dep_orgao_exp}
                           onChange={handleInputChange}
                         />
                       </FormControl>
