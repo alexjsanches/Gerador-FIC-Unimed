@@ -130,13 +130,14 @@ const IndexPage = () => {
     }
 
     fetch(`https://viacep.com.br/ws/${cep}/json/`)
-      .then((res) => res.json())
-      .then((data) => {
-        setLogradouro(data.logradouro);
-        setBairro(data.bairro);
-        setCidade(data.localidade);
-        setUf(data.uf);
-      });
+    .then((res) => res.json())
+    .then((data) => {
+      setLogradouro(data.logradouro);
+      setBairro(data.bairro);
+      setCidade(data.localidade);
+      setUf(data.uf);
+      // Escrever no PDF usando a variável logradouroUpperCase
+    });
   }
 
   const [currentStep, setCurrentStep] = useState(0);
@@ -231,7 +232,7 @@ const IndexPage = () => {
       { fieldName: "tit_cns", value: formValues.tit_cns },
       //--------------------DEP1---------------------------
       { fieldName: "dep1_nome",       value: formValues.dep1_nome },
-      { fieldName: "dep1_dn",         value: formValues.dep1_dn },
+      { fieldName: "dep1_dn",         value: formatDate("dep1_dn", formValues.dep1_dn).value, },
       { fieldName: "dep1_sexo",       value: formValues.dep1_sexo === "M" ? "M" : "F"  },
       { fieldName: "dep1_estcivil",   value: formValues.dep1_estcivil },
       { fieldName: "dep1_nomemae",    value: formValues.dep1_nomemae },
@@ -244,7 +245,7 @@ const IndexPage = () => {
       
       //--------------------DEP2---------------------------
       { fieldName: "dep2_nome",       value: formValues.dep2_nome },
-      { fieldName: "dep2_dn",         value: formValues.dep2_dn },
+      { fieldName: "dep2_dn",         value: formatDate("dep2_dn", formValues.dep2_dn).value, },
       { fieldName: "dep2_sexo",       value: formValues.dep2_sexo === "M" ? "M" : "F"  },
       { fieldName: "dep2_estcivil",   value: formValues.dep2_estcivil },
       { fieldName: "dep2_nomemae",    value: formValues.dep2_nomemae },
@@ -256,7 +257,7 @@ const IndexPage = () => {
       { fieldName: "dep2_cns",        value: formValues.dep2_cns },
       //--------------------DEP3---------------------------
       { fieldName: "dep3_nome",       value: formValues.dep3_nome },
-      { fieldName: "dep3_dn",         value: formValues.dep3_dn },
+      { fieldName: "dep3_dn",         value: formatDate("dep3_dn", formValues.dep3_dn).value,},
       { fieldName: "dep3_sexo",       value: formValues.dep3_sexo === "M" ? "M" : "F"  },
       { fieldName: "dep3_estcivil",   value: formValues.dep3_estcivil },
       { fieldName: "dep3_nomemae",    value: formValues.dep3_nomemae },
@@ -268,7 +269,7 @@ const IndexPage = () => {
       { fieldName: "dep3_cns",        value: formValues.dep3_cns },
       //--------------------DEP4---------------------------
       { fieldName: "dep4_nome",       value: formValues.dep4_nome },
-      { fieldName: "dep4_dn",         value: formValues.dep4_dn },
+      { fieldName: "dep4_dn",         value: formatDate("dep4_dn", formValues.dep4_dn).value, },
       { fieldName: "dep4_sexo",       value: formValues.dep4_sexo === "M" ? "M" : "F"  },
       { fieldName: "dep4_estcivil",   value: formValues.dep4_estcivil },
       { fieldName: "dep4_nomemae",    value: formValues.dep4_nomemae },
@@ -287,9 +288,10 @@ const IndexPage = () => {
     fieldValues.forEach((field) => {
       const textField = form.getTextField(field.fieldName);
       if (textField) {
-        textField.setText(field.value);
+        textField.setText(field.value.toUpperCase());
       }
     });
+    
 
     // Marcando ou desmarcando os campos de checkbox
     checkboxFields.forEach((field) => {
