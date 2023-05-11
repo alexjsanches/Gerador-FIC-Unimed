@@ -33,7 +33,7 @@ import {
   TabPanels,
 } from "@chakra-ui/react";
 
-const SourceFileUrl = "https://alexjsanches.github.io/monaiza/FIC+DS.pdf";
+const SourceFileUrl = "https://alexjsanches.github.io/Gerador-FIC-Unimed/files/FIC+DS.pdf";
 const SourceFileUrl2 = "https://alexjsanches.github.io/monaiza/proposta.pdf";
 
 const IndexPage = () => {
