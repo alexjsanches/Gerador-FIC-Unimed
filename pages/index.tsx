@@ -465,6 +465,11 @@ const IndexPage = () => {
   const handleSelectChange = (event) => {
     const value = event.target.value;
     const name = event.target.name;
+  };
+
+  const handleSelectChange2 = (event) => {
+    const value = event.target.value;
+    const name = event.target.name;
 
     setFormValues({
       ...formValues,
@@ -583,7 +588,7 @@ const IndexPage = () => {
                         placeholder="Selecione"
                         name="corretor_nome"
                         value={formValues.corretor_nome}
-                        onChange={handleSelectChange}
+                        onChange={handleSelectChange2}
                       >
                         <option value="ADRIENE DE PAULA">
                           ADRIENE DE PAULA
