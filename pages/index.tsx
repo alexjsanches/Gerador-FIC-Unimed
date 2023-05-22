@@ -422,7 +422,7 @@ const IndexPage = () => {
     "JORGE LUIZ MARTINEZ PEREIRA": "053.681.867-38",
     "JOSE ROBERTO SOUZA SANTIAGO": "069.093.784-90",
     "JOSY LUCY BARRETO DE SOUZA CAVALCANTE": "060.525.266-10",
-    "KAROLNE BORGES NOVAES": "073.789.076-26",
+    "KAROLINE BORGES NOVAES": "073.789.076-26",
     "KENICHI OTSUKA NETO": "092.747.996-67",
     "KENIEL GUIMARAES MACHADO": "765.921.896-49",
     "LEANDRA GONCALVES ARAUJO": "932.349.106-34",
@@ -464,7 +464,7 @@ const IndexPage = () => {
 
   const handleSelectChange = (event) => {
     const value = event.target.value;
-    const name = event.target.name;
+    setFormValues({ ...formValues, [event.target.name]: value });
   };
 
   const handleSelectChange2 = (event) => {
@@ -731,8 +731,8 @@ const IndexPage = () => {
                         <option value="JOSY LUCY BARRETO DE SOUZA CAVALCANTE">
                           JOSY LUCY BARRETO DE SOUZA CAVALCANTE
                         </option>
-                        <option value="KAROLNE BORGES NOVAES">
-                          KAROLNE BORGES NOVAES
+                        <option value="KAROLINE BORGES NOVAES">
+                          KAROLINE BORGES NOVAES
                         </option>
                         <option value="KENICHI OTSUKA NETO">
                           KENICHI OTSUKA NETO
